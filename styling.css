@@ -9,13 +9,13 @@ body{
     width: fit-content;
     padding: 30px;
 }
-#show{
+#todoItem{
     width: 600px;
     height: 35px;
     border: 2px solid blue;
     outline: none;
 }
-#btn{
+#addBtn{
     height: 38px;
     width: 60px;
     background-color: blue;
@@ -24,7 +24,7 @@ body{
     font-size: 18px;
     margin-left: 20px;
 }
-#showTodo{
+#display{
     width: 700px;
     height: 60px;
     border: none;
@@ -34,14 +34,18 @@ body{
     background-color: aquamarine;
     outline: none;
     align-items: center;
-    /* margin-right: 80px; */
+    
 }
-#delete-btn{
+.btn-div{
+    width: fit-content;
+    display: flex;
+    
+}
+#deleteBtn{
     margin: 3px;
     border-radius: 6px;
     background-color: blue;
     color: white;
     border: none;
     height: 30px;
-    display: flex;
 }
