@@ -1,0 +1,47 @@
+body{
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con{
+    background-color: white;
+    width: fit-content;
+    padding: 30px;
+}
+#show{
+    width: 600px;
+    height: 35px;
+    border: 2px solid blue;
+    outline: none;
+}
+#btn{
+    height: 38px;
+    width: 60px;
+    background-color: blue;
+    color: white;
+    border: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+#showTodo{
+    width: 700px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: aquamarine;
+    outline: none;
+    align-items: center;
+    /* margin-right: 80px; */
+}
+#delete-btn{
+    margin: 3px;
+    border-radius: 6px;
+    background-color: blue;
+    color: white;
+    border: none;
+    height: 30px;
+    display: flex;
+}
