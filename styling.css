@@ -9,7 +9,8 @@ body{
     width: fit-content;
     padding: 30px;
 }
-#todoItem{
+#todoItem,
+#inPut2 {
     width: 600px;
     height: 35px;
     border: 2px solid blue;
@@ -34,6 +35,7 @@ body{
     background-color: aquamarine;
     outline: none;
     align-items: center;
+    margin-bottom: 10px;
     
 }
 .btn-div{
@@ -48,4 +50,16 @@ body{
     color: white;
     border: none;
     height: 30px;
+}
+#err{
+    color: red;
+    font-size: 18px;
+}
+#success-msg{
+    color: green;
+    font-size: 18px;
+}
+#text{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
