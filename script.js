@@ -12,7 +12,6 @@ let count = 0;
 function dispArr() {
     showTodo.innerHTML = "";
     todo.forEach((el, index) => {
-        count = index
         showTodo.innerHTML +=`
         <div id="display">
           <h5 id="text">${index +1} ${el} </h5>
@@ -26,13 +25,15 @@ function dispArr() {
     todoItem.value = "";
 }
     dispArr();
-
+    
+    let storage = []
     function addItems() {
         if (todoItem.value == "") {
             showErr.innerHTML = "<p id='err'>" + "Input field cannot be empty"+ "</p>";
         }
         else {
-            localStorage.setItem("Store", todoItem.value)
+            storage.push(todoItem.value)
+            localStorage.setItem("store", JSON.stringify(storage));
             showErr.innerHTML = "<p id='success-msg'>" +"Todo successfully added"+ "</p>";
             todo.push(todoItem.value);
             dispArr()
@@ -46,14 +47,18 @@ function del(index) {
 }
 
 function edit(timi) {
+    count = timi
     editInp.style.display= "block"
     showInp.style.display= "none"
     inPut2.value = todo[timi];
 
 }
 
-function done(timi) {
+function done() {
+
     todo.splice(count, 1, inPut2.value);
+    storage.splice(count, 1, inPut2.value)
+    localStorage.setItem("store", JSON.stringify(storage));
     showTodo.innerHTML = "";
     todo.map((sh, rem) => {
         console.log(sh, rem);
