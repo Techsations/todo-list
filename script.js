@@ -32,6 +32,7 @@ function dispArr() {
             showErr.innerHTML = "<p id='err'>" + "Input field cannot be empty"+ "</p>";
         }
         else {
+            localStorage.setItem("Store", todoItem.value)
             showErr.innerHTML = "<p id='success-msg'>" +"Todo successfully added"+ "</p>";
             todo.push(todoItem.value);
             dispArr()
