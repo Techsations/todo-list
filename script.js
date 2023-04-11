@@ -8,9 +8,11 @@ let editInp = document.getElementById("editInp")
 editInp.style.display= "none"
 let inPut2 = document.getElementById("inPut2")
 
+let count = 0;
 function dispArr() {
     showTodo.innerHTML = "";
     todo.forEach((el, index) => {
+        count = index
         showTodo.innerHTML +=`
         <div id="display">
           <h5 id="text">${index +1} ${el} </h5>
@@ -47,6 +49,26 @@ function edit(timi) {
     showInp.style.display= "none"
     inPut2.value = todo[timi];
 
+}
+
+function done(timi) {
+    todo.splice(count, 1, inPut2.value);
+    showTodo.innerHTML = "";
+    todo.map((sh, rem) => {
+        console.log(sh, rem);
+        showTodo.innerHTML += `
+    <div class="display">
+        <h1>${sh}</h1>
+        <div>
+            <button id='delete-btn' onclick='edit(${rem})'>Edit</button>
+            <button id='delete-btn' onclick='del(${rem})'>Delete</button>
+          </div>
+    </div>
+    `
+    })
+    editInp.style.display= "none"
+    showInp.style.display= "block"
+    dispArr()
 }
 
 // function addItems() {
@@ -95,19 +117,19 @@ function edit(timi) {
     
 // }
 
-function done() {
-    arrayTodo.splice(rem, 1, input.value);
-    showTodo.innerHTML = "";
-    arrayTodo.map((sh, rem) => {
-        console.log(sh, rem);
-        showTodo.innerHTML += `
-    <div class="display">
-        <h1>${sh}</h1>
-        <div>
-            <button id='delete-btn' onclick='edit(${rem})'>Edit</button>
-            <button id='delete-btn' onclick='del(${rem})'>Delete</button>
-          </div>
-    </div>
-    `
-    })
-}
+// function done(timi) {
+//     arrayTodo.splice(rem, 1, inPut2.value);
+//     showTodo.innerHTML = "";
+//     arrayTodo.map((sh, rem) => {
+//         console.log(sh, rem);
+//         showTodo.innerHTML += `
+//     <div class="display">
+//         <h1>${sh}</h1>
+//         <div>
+//             <button id='delete-btn' onclick='edit(${rem})'>Edit</button>
+//             <button id='delete-btn' onclick='del(${rem})'>Delete</button>
+//           </div>
+//     </div>
+//     `
+//     })
+// }
